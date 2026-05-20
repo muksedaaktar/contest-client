@@ -32,7 +32,7 @@ const WinnerAdvertisement = () => {
       {/* TITLE SECTION */}
       <div className="text-center mb-12 px-4">
         <h2 className="text-3xl md:text-4xl font-extrabold">
-          🏆 <span className="text-primary">Hall</span> of <span className="text-primary">Fame</span>
+          🏆 <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">Hall</span> of <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">Fame</span>
         </h2>
         <p className="text-base-content/70 mt-3 max-w-2xl mx-auto">
           Meet our recent champions who turned their skills into real rewards and proved their talent on ContestHub.
@@ -68,7 +68,7 @@ const WinnerAdvertisement = () => {
         <div>
 
           <h3 className="text-2xl md:text-3xl font-bold mb-3">
-            Why join ContestHub?
+            Why join <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">ContestHub</span>?
           </h3>
 
           <p className="text-base-content/70 leading-relaxed">
@@ -92,7 +92,7 @@ const WinnerAdvertisement = () => {
             effect={"cards"}
             grabCursor={true}
             autoplay={{ delay: 2200, disableOnInteraction: false }}
-            className="w-[300px]"
+            className="w-75"
           >
             {winners.map((w, index) => (
               <SwiperSlide key={index}>

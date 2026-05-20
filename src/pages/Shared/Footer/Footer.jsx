@@ -21,7 +21,7 @@ const Footer = () => {
 
                         <h2 className="text-3xl font-extrabold">
                             <span className="text-primary">Con</span>
-                            <span className="bg-gradient-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">
+                            <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">
                                 TestHub
                             </span>
                         </h2>

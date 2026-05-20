@@ -38,7 +38,7 @@ const Banner = () => {
                 placeholder="Search contests..."
                 className="w-full px-4 py-3 outline-none"
               />
-              <button className="bg-gradient-to-r from-[#54CF68] to-[#00827A] text-white px-6">
+              <button className="btn-primary text-white px-6">
                 Search
               </button>
             </div>

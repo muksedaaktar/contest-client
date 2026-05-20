@@ -45,7 +45,7 @@ const CreatorCategories = () => {
       {/* Header */}
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-extrabold">
-          Explore <span className="text-primary">Creator Categories</span>
+          Explore <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">Creator Categories</span>
         </h2>
         <p className="text-base-content/70 mt-2">
           Join contests based on your passion and skills

@@ -36,7 +36,7 @@ const ContributionSection = () => {
           className="text-center mb-14"
         >
           <h1 className="text-3xl md:text-4xl font-extrabold">
-             ContestHub <span className="text-primary">Community</span> Impact
+             ContestHub <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">Community</span> Impact
           </h1>
 
           <p className="text-base-content/70 max-w-2xl mx-auto mt-4 leading-relaxed">
@@ -62,7 +62,7 @@ const ContributionSection = () => {
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1170&auto=format&fit=crop"
                 alt="ContestHub Community"
-                className="rounded-3xl shadow-2xl h-[500px] w-full object-cover"
+                className="rounded-3xl shadow-2xl h-125 w-full object-cover"
               />
 
               {/* Floating Badge */}
@@ -118,7 +118,7 @@ const ContributionSection = () => {
                 className="bg-base-100 p-7 rounded-3xl shadow-lg border border-base-300 hover:border-primary duration-300 cursor-pointer"
               >
 
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-[#54CF68] to-[#00827A] flex items-center justify-center text-2xl mb-4 text-white shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-linear-to-r from-[#54CF68] to-[#00827A] flex items-center justify-center text-2xl mb-4 text-white shadow-lg">
                   {item.icon}
                 </div>
 

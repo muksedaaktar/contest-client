@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* LIGHT THEME */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  --color-primary: #54CF68;
+  --color-secondary: #00827A;
+}
+
+/* DARK THEME */
+@plugin "daisyui/theme" {
+  name: "dark";
+
+  --color-primary: #54CF68;
+  --color-secondary: #00827A;
+  --base-100: #0F172A;
+  --base-content: #F8FAFC;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #54CF68, #00827A);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #632EE3, #9F62F2);
+}
+
+
+
+.dancing-script {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+}
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+}

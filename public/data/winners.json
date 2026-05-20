@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Ayesha Rahman",
+    "contest": "React Challenge",
+    "prize": "$500",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+  },
+  {
+    "id": 2,
+    "name": "John Smith",
+    "contest": "UI Design Contest",
+    "prize": "$300",
+    "image": "https://plus.unsplash.com/premium_photo-1669703777437-27602d656c27?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D"
+  },
+  {
+    "id": 3,
+    "name": "David Lee",
+    "contest": "AI Hackathon",
+    "prize": "$700",
+    "image": "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D"
+  },
+  {
+    "id": 4,
+    "name": "Sara Khan",
+    "contest": "Photography Contest",
+    "prize": "$450",
+    "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
+  },
+  {
+    "id": 5,
+    "name": "Michael Brown",
+    "contest": "Data Science Challenge",
+    "prize": "$600",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+  },
+  {
+    "id": 6,
+    "name": "Emily Davis",
+    "contest": "Startup Pitch",
+    "prize": "$1000",
+    "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+  },
+  {
+    "id": 7,
+    "name": "Noah Wilson",
+    "contest": "Game Jam",
+    "prize": "$900",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7"
+  }
+]

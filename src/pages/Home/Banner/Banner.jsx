@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import bannerImg1 from '../../../assets/banner-1.jpg';
 import bannerImg2 from '../../../assets/banner-2.jpg';
-import bannerImg3 from '../../../assets/banner-3.jpg';
+import bannerImg3 from '../../../assets/banner.jpg';
 
 const Banner = () => {
   return (
@@ -64,7 +64,7 @@ const Banner = () => {
                 placeholder="Search contests..."
                 className="w-full px-4 py-3 outline-none"
               />
-              <button className="bg-gradient-to-r from-[#54CF68] to-[#00827A] text-white px-6">
+              <button className="`bg-gradient-to-r` from-[#54CF68] to-[#00827A] text-white px-6">
                 Search
               </button>
             </div>
@@ -90,7 +90,7 @@ const Banner = () => {
                 placeholder="Search contests..."
                 className="w-full px-4 py-3 outline-none"
               />
-              <button className="bg-gradient-to-r from-[#54CF68] to-[#00827A] text-white px-6">
+              <button className="`bg-gradient-to-r` from-[#54CF68] to-[#00827A] text-white px-6">
                 Search
               </button>
             </div>

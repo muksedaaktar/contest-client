@@ -50,7 +50,7 @@ const PopularContest = () => {
 
           {sortedContests.map((contest) => (
             <div
-              key={contest.id}
+              key={contest._id}
               className="group bg-base-200 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300"
             >
 

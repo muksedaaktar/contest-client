@@ -40,7 +40,7 @@ const CreatorCategories = () => {
   ];
 
   return (
-    <div className="py-16 bg-base-100">
+    <div className="py-10 bg-base-100">
 
       {/* Header */}
       <div className="text-center mb-10">

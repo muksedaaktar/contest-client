@@ -1,5 +1,7 @@
 // import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router";
+import useAuth from "../../../hooks/useAuth";
 
 const fetchContests = async () => {
   const res = await fetch("http://localhost:3000/popular-contests");
@@ -7,7 +9,11 @@ const fetchContests = async () => {
   return res.json();
 };
 
+
 const PopularContest = () => {
+
+  const navigate = useNavigate();
+  const {user} = useAuth();
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["Contests"],
@@ -95,9 +101,14 @@ const PopularContest = () => {
 
                 {/* BUTTON */}
                 <button
+                  onClick={() =>
+                    user
+                      ? navigate(`/contest/${contest._id}`)
+                      : navigate("/login")
+                  }
                   className="btn btn-primary w-full rounded-full"
                 >
-                  Details
+                  View Details
                 </button>
 
               </div>
@@ -108,6 +119,7 @@ const PopularContest = () => {
         {/* SHOW ALL */}
         <div className="flex justify-center mt-12">
           <button
+            onClick={() => navigate("/all-contests")}
             className="btn btn-primary px-10 rounded-full"
           >
             Show All

@@ -9,6 +9,7 @@ import Register from "../pages/Auth/Register/Register";
 import NotFoundPage from "../pages/NotFound/NotFoundPage";
 import ContestDetails from "../pages/ContestDetails/ContestDetails";
 import PrivateRoute from "./PrivateRoute";
+import Payment from "../pages/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ export const router = createBrowserRouter([
             <ContestDetails />
           </PrivateRoute>
         )
+      },
+
+      {
+        path : 'payment/:id',
+        Component : Payment
       }
     ]
   },

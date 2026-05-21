@@ -1,14 +1,27 @@
 // import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../../../component/Logo/Logo';
+import useAuth from '../../../hooks/useAuth';
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
+  const { user,logOut } = useAuth();
+
+  const handleLogOut = () => {
+    logOut()
+    .then()
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
   return (
     <div className="navbar bg-base-200 shadow-md sticky top-0 z-50">
-      
+
       {/* LEFT: Logo */}
       <div className="navbar-start container mx-auto px-5">
-        
+
         <div className="flex items-center gap-2">
           <Logo />
 
@@ -47,22 +60,33 @@ const Navbar = () => {
       {/* RIGHT SIDE (UI only placeholders) */}
       <div className="navbar-end container mx-auto px-5 flex items-center gap-3">
 
-        {/* Theme button (UI only, no logic) */}
-        {/* <button className="btn btn-ghost btn-sm">
-          🌞 / 🌙
-        </button> */}
-
         {/* Auth buttons (static UI) */}
-        <button className="btn btn-primary btn-sm">
-          Login
-        </button>
+        {
+          user ? (
+            <button
+              onClick={() => handleLogOut()}
+              className="btn btn-primary btn-sm"
+            >
+              Logout
+            </button>
+          ) : (
+            <div className="flex gap-2">
+              <button
+                onClick={() => navigate("/login")}
+                className="btn btn-primary btn-sm"
+              >
+                Login
+              </button>
 
-        <button className="btn btn-primary btn-sm">
-          Register
-        </button>
-
-        {/* Profile placeholder (UI only) */}
-        <div className="w-10 h-10 rounded-full bg-base-300 border-2 border-primary cursor-pointer" />
+              <button
+                onClick={() => navigate("/register")}
+                className="btn btn-primary btn-sm"
+              >
+                Register
+              </button>
+            </div>
+          )
+        }
 
       </div>
     </div>

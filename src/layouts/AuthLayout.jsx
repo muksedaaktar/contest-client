@@ -1,23 +1,18 @@
-
 import { Outlet } from "react-router";
-import Logo from "../component/Logo/Logo";
+import Navbar from "../pages/Shared/Navbar/Navbar";
+import Footer from "../pages/Shared/Footer/Footer";
+
 
 const AuthLayout = () => {
     return (
-        <div className="max-w-7xl mx-auto mt-20 ">
-            <div className="flex items-center gap-2 mb-5">
-                <Logo></Logo>
-            <h1 className="text-2xl font-extrabold">
-                <span className="text-primary">Con</span>
-                <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">
-                    TestHub
-                </span>
-            </h1>
-            </div>
-            <div>
-                <Outlet></Outlet>
+        <div>
+            <Navbar />
+
+            <div className="min-h-screen flex items-center justify-center">
+                <Outlet />
             </div>
 
+            <Footer />
         </div>
     );
 };

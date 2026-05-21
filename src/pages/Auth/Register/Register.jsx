@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
     const {
@@ -10,10 +11,7 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
-
     const { registerUser } = useAuth()
-
-
 
     const handleRegistration = (data) => {
         console.log('after register', data);
@@ -203,6 +201,7 @@ const Register = () => {
                                 >
                                     Register Now
                                 </button>
+                                <SocialLogin></SocialLogin>
                             </form>
 
                             {/* Footer */}

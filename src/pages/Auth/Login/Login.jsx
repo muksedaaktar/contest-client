@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
+
+    const navigate = useNavigate();
 
     const {
         register,
@@ -18,8 +21,17 @@ const Login = () => {
     const handleLogin = (data) => {
         console.log('login data', data);
         signInUser(data.email, data.password)
+
             .then(result => {
                 console.log(result.user)
+
+                Swal.fire({
+                    title: "Login Successful!",
+                    text: "Welcome back to ContestHub.🎉",
+                    icon: "success",
+                    confirmButtonColor: "#54CF68",
+                });
+                navigate("/");
             })
             .catch(error => {
                 console.log(error)
@@ -133,10 +145,10 @@ const Login = () => {
                             Login
                         </button>
 
-                        
+
 
                     </form>
-                        <SocialLogin></SocialLogin>
+                    <SocialLogin></SocialLogin>
 
                     {/* Register */}
                     <p className="text-center text-base-content/70 mt-6">

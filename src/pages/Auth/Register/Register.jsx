@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Swal from "sweetalert2";
 
 const Register = () => {
+
+    const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
@@ -18,6 +22,14 @@ const Register = () => {
         registerUser(data.email, data.password)
             .then(result => {
                 console.log(result.user)
+
+                Swal.fire({
+                    title: "Registration Successful!",
+                    text: "Your ccount has been created successfully.🎉",
+                    icon: "success",
+                    confirmButtonColor: "#54CF68",
+                });
+                navigate("/")
             })
             .catch(error => {
                 console.log(error)

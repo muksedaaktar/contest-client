@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-// import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import useAuth from "../../../hooks/useAuth";
+
 
 const Login = () => {
 
@@ -11,8 +12,17 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const {signInUser} = useAuth()
+
+  const handleLogin = (data) => {
+    console.log('login data',data);
+     signInUser(data.email,data.password)
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.log(error)
+        })
   };
 
   return (
@@ -54,7 +64,7 @@ const Login = () => {
           </p>
 
           {/* Form */}
-          <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
+          <form className="space-y-5" onSubmit={handleSubmit(handleLogin)}>
 
             {/* Email */}
             <div>

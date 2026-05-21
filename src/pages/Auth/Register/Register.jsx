@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import useAuth from "../../../hooks/useAuth";
 
 const Register = () => {
     const {
@@ -9,8 +10,20 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+
+    const { registerUser } = useAuth()
+
+
+
+    const handleRegistration = (data) => {
+        console.log('after register', data);
+        registerUser(data.email, data.password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     };
 
     return (
@@ -70,7 +83,7 @@ const Register = () => {
                             </div>
 
                             {/* Form */}
-                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                            <form onSubmit={handleSubmit(handleRegistration)} className="space-y-5">
 
                                 {/* Name */}
                                 <div>

@@ -6,6 +6,7 @@ import {
     FaFacebook,
 } from 'react-icons/fa';
 import Logo from '../../../component/Logo/Logo';
+import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
@@ -34,9 +35,11 @@ const Footer = () => {
                     </p>
 
                     {/* CTA */}
-                    <button className="btn btn-primary mt-6 rounded-xl px-6">
+                    <NavLink to = "/all-contests" className="btn btn-primary mt-6 rounded-xl px-6">
+                         
                         Explore Contests
-                    </button>
+                    
+                    </NavLink>
                 </aside>
 
                 {/* Services */}

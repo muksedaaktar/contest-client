@@ -40,7 +40,7 @@ const UserDashboard = () => {
         </NavLink>
 
         <NavLink
-          to="/dashboard/my-participations"
+          to="/my-participations"
           className="bg-base-100 p-6 rounded-2xl shadow hover:shadow-xl transition"
         >
           <h2 className="text-xl font-bold">My Participations</h2>
@@ -50,7 +50,7 @@ const UserDashboard = () => {
         </NavLink>
 
         <NavLink
-          to="/dashboard/my-wins"
+          to="/my-wins"
           className="bg-base-100 p-6 rounded-2xl shadow hover:shadow-xl transition"
         >
           <h2 className="text-xl font-bold">My Winning Contests</h2>

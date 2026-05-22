@@ -12,6 +12,8 @@ import PrivateRoute from "./PrivateRoute";
 import Payment from "../pages/Payment/Payment";
 import UserDashBoard from "../pages/DashBoard/UserDashboard/UserDashBoard";
 import MyProfile from "../pages/DashBoard/UserDashboard/MyProfile";
+import MyParcipatedContest from "../pages/DashBoard/UserDashboard/MyParcipatedContest";
+import MyWinningContest from "../pages/DashBoard/UserDashboard/MyWinningContest";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +49,24 @@ export const router = createBrowserRouter([
         element : (
           <PrivateRoute>
             <MyProfile></MyProfile>
+          </PrivateRoute>
+        )
+      },
+
+      {
+        path : '/my-participations',
+        element : (
+          <PrivateRoute>
+            <MyParcipatedContest></MyParcipatedContest>
+          </PrivateRoute>
+        )
+      },
+
+      {
+        path : '/my-wins',
+        element : (
+          <PrivateRoute>
+            <MyWinningContest></MyWinningContest>
           </PrivateRoute>
         )
       },

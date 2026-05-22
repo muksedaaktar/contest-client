@@ -1,16 +1,63 @@
-# React + Vite
+# 🏆 ContestHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌐 Live Site
+https://your-live-site-url.com
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Project Overview
+ContestHub is a full-stack contest management platform where users can participate in different contests, submit tasks, win prizes, and track their performance. Creators can create contests and manage submissions, while admins control users and contests.
 
-## React Compiler
+This project is built using **React, Node.js, Express, and MongoDB** with Firebase authentication.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔐 User authentication using Firebase (Login/Register)
+- 👤 Role-based system (User / Creator / Admin)
+- 🏆 Users can participate in paid contests
+- 📤 Submission system for contest tasks
+- 🥇 Winner declaration system by creator/admin
+- 📊 Analytics dashboard with charts (Recharts)
+- 📈 Leaderboard system based on wins
+- 🧑‍💼 Admin panel to manage users and contests
+- ✏️ Creator dashboard to add, edit, and manage contests
+- 💳 Payment/entry fee system for contest registration
+- 📅 Deadline-based contest management
+- 🎯 Filter contests by type and status
+
+---
+
+## 🛠️ Tech Stack
+
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+- Firebase Auth
+- Tailwind CSS + DaisyUI
+- Recharts
+
+---
+
+## 📂 Main Pages
+
+- Home Page
+- All Contests Page
+- Contest Details Page
+- User Dashboard
+- Creator Dashboard
+- Admin Dashboard
+- Leaderboard Page
+- Analytics Page
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/your-username/contesthub.git
+cd contesthub
+npm install
+npm run dev

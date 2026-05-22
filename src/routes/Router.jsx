@@ -10,6 +10,8 @@ import NotFoundPage from "../pages/NotFound/NotFoundPage";
 import ContestDetails from "../pages/ContestDetails/ContestDetails";
 import PrivateRoute from "./PrivateRoute";
 import Payment from "../pages/Payment/Payment";
+import UserDashBoard from "../pages/DashBoard/UserDashboard/UserDashBoard";
+import MyProfile from "../pages/DashBoard/UserDashboard/MyProfile";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +32,25 @@ export const router = createBrowserRouter([
         path: 'extra',
         Component: ExtraSection
       },
+
+      {
+        path : '/user-dashboard',
+        element : (
+          <PrivateRoute>
+            <UserDashBoard></UserDashBoard>
+          </PrivateRoute>
+        )
+      },
+
+       {
+        path : '/my-profile',
+        element : (
+          <PrivateRoute>
+            <MyProfile></MyProfile>
+          </PrivateRoute>
+        )
+      },
+
       {
         path: "contest/:id",
         element: (
@@ -40,8 +61,8 @@ export const router = createBrowserRouter([
       },
 
       {
-        path : 'payment/:id',
-        Component : Payment
+        path: 'payment/:id',
+        Component: Payment
       }
     ]
   },
@@ -61,6 +82,8 @@ export const router = createBrowserRouter([
       },
     ]
   },
+
+
   {
     path: "*",
     Component: NotFoundPage

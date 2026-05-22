@@ -23,7 +23,7 @@ const NotFoundPage = () => {
           Oops! This page disappeared from the contest arena 🏆
         </p>
 
-        <p className="text-base-content/70 mb-6 max-w-md mx-auto">
+        <p className=" mb-6 max-w-md mx-auto">
           The page you’re looking for doesn’t exist or may have been moved.
           Let’s get you back to the contests.
         </p>

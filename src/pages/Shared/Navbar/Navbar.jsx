@@ -7,7 +7,6 @@ import { useState } from "react";
 const Navbar = () => {
   const navigate = useNavigate();
   const { user, logOut } = useAuth();
-
   const [open, setOpen] = useState(false);
 
   const handleLogOut = () => {
@@ -16,9 +15,7 @@ const Navbar = () => {
         setOpen(false);
         navigate("/");
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -26,10 +23,8 @@ const Navbar = () => {
 
       {/* LEFT */}
       <div className="navbar-start container mx-auto px-5">
-
         <div className="flex items-center gap-2">
           <Logo />
-
           <h1 className="text-2xl font-extrabold">
             <span className="text-primary">Con</span>
             <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">
@@ -37,20 +32,6 @@ const Navbar = () => {
             </span>
           </h1>
         </div>
-
-        {/* Mobile menu */}
-        <div className="dropdown lg:hidden ml-3">
-          <div tabIndex={0} role="button" className="btn btn-ghost">
-            ☰
-          </div>
-
-          <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow">
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/all-contests">All Contests</NavLink></li>
-            <li><NavLink to="/extra">Extra Section</NavLink></li>
-          </ul>
-        </div>
-
       </div>
 
       {/* CENTER */}
@@ -65,10 +46,9 @@ const Navbar = () => {
       {/* RIGHT */}
       <div className="navbar-end container mx-auto px-5 flex items-center gap-3">
 
-        {/* Theme */}
         <ThemeToggle />
 
-        {/* AUTH SECTION */}
+        {/* AUTH */}
         {user ? (
           <div className="relative">
 
@@ -82,7 +62,7 @@ const Navbar = () => {
 
             {/* Dropdown */}
             {open && (
-              <div className="absolute right-0 mt-3 w-52 bg-base-100 shadow-xl rounded-xl overflow-hidden z-50">
+              <div className="absolute right-0 mt-3 w-52 bg-base-100 shadow-xl rounded-xl z-50">
 
                 {/* Name */}
                 <div className="px-4 py-3 border-b">
@@ -94,25 +74,13 @@ const Navbar = () => {
                 {/* Dashboard */}
                 <button
                   onClick={() => {
-                    navigate("/dashboard");
+                    navigate("/user-dashboard");
                     setOpen(false);
                   }}
                   className="w-full text-left px-4 py-2 hover:bg-base-200"
                 >
                   Dashboard
                 </button>
-
-                {/* Profile (optional) */}
-                <button
-                  onClick={() => {
-                    navigate("/profile");
-                    setOpen(false);
-                  }}
-                  className="w-full text-left px-4 py-2 hover:bg-base-200"
-                >
-                  Profile
-                </button>
-
                 {/* Logout */}
                 <button
                   onClick={handleLogOut}

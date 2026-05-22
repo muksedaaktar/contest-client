@@ -22,6 +22,8 @@ import SubmittedTask from "../pages/DashBoard/CreatorDashboard/SubmittedTask";
 import AdminDashboard from "../pages/DashBoard/AdminDashboard/AdminDashboard";
 import ManageUsers from "../pages/DashBoard/AdminDashboard/ManageUsers";
 import ManageContests from "../pages/DashBoard/AdminDashboard/ManageContests";
+import LeaderBoard from "../pages/LeaderBoard/LeaderBoard";
+import Analytics from "../pages/Analytics/Analytics";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +43,16 @@ export const router = createBrowserRouter([
       {
         path: 'extra',
         Component: ExtraSection
+      },
+
+      {
+        path: 'leader-board',
+        Component: LeaderBoard
+      },
+
+      {
+        path: 'analytics',
+        Component: Analytics
       },
 
       {

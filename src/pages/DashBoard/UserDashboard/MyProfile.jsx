@@ -3,6 +3,13 @@ import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router";
+import {
+    PieChart,
+    Pie,
+    Cell,
+    Tooltip,
+    ResponsiveContainer
+} from "recharts";
 
 const MyProfile = () => {
     const { user } = useAuth();
@@ -14,6 +21,8 @@ const MyProfile = () => {
     const [name, setName] = useState(user?.displayName || "");
     const [photo, setPhoto] = useState(user?.photoURL || "");
     const [loading, setLoading] = useState(false);
+    const [wins, setWins] = useState(0);
+    const [participated, setParticipated] = useState(0);
 
     useEffect(() => {
         fetch(`http://localhost:3000/users/${user.email}`)
@@ -25,6 +34,48 @@ const MyProfile = () => {
                 setBio(data.bio);
             });
     }, [user.email]);
+
+    useEffect(() => {
+        if (!user?.email) return;
+
+        const fetchStats = async () => {
+            try {
+                // participated
+                const regRes = await fetch(
+                    `http://localhost:3000/registrations?email=${user.email}`
+                );
+                const regData = await regRes.json();
+
+                // wins
+                const winRes = await fetch(
+                    `http://localhost:3000/winners`
+                );
+                const winData = await winRes.json();
+
+                const myWins = winData.filter(
+                    (w) => w.winner_email === user.email
+                );
+
+                setParticipated(regData.length);
+                setWins(myWins.length);
+
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        fetchStats();
+    }, [user?.email]);
+
+    const winPercent =
+        participated === 0 ? 0 : (wins / participated) * 100;
+
+    const chartData = [
+        { name: "Wins", value: wins },
+        { name: "Loss", value: participated - wins },
+    ];
+
+    const COLORS = ["#22c55e", "#ef4444"];
 
     const handleUpdate = async () => {
         setLoading(true);
@@ -202,6 +253,51 @@ const MyProfile = () => {
                     </>
                 )}
 
+            </div>
+            {/* WIN CHART */}
+            <div className="mt-10">
+                <h2 className="text-xl font-bold mb-4 text-center">
+                    📊 Win Percentage
+                </h2>
+
+                <div className="grid grid-cols-3 text-center mb-6">
+                    <div>
+                        <p className="font-bold text-lg">{participated}</p>
+                        <p className="text-sm">Participated</p>
+                    </div>
+
+                    <div>
+                        <p className="font-bold text-lg text-green-500">{wins}</p>
+                        <p className="text-sm">Wins</p>
+                    </div>
+
+                    <div>
+                        <p className="font-bold text-lg text-primary">
+                            {winPercent.toFixed(1)}%
+                        </p>
+                        <p className="text-sm">Win Rate</p>
+                    </div>
+                </div>
+
+                <div className="h-72">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <PieChart>
+                            <Pie
+                                data={chartData}
+                                cx="50%"
+                                cy="50%"
+                                outerRadius={100}
+                                dataKey="value"
+                                label
+                            >
+                                {chartData.map((_, index) => (
+                                    <Cell key={index} fill={COLORS[index]} />
+                                ))}
+                            </Pie>
+                            <Tooltip />
+                        </PieChart>
+                    </ResponsiveContainer>
+                </div>
             </div>
         </div>
     );

@@ -14,6 +14,11 @@ import UserDashBoard from "../pages/DashBoard/UserDashboard/UserDashBoard";
 import MyProfile from "../pages/DashBoard/UserDashboard/MyProfile";
 import MyParcipatedContest from "../pages/DashBoard/UserDashboard/MyParcipatedContest";
 import MyWinningContest from "../pages/DashBoard/UserDashboard/MyWinningContest";
+import CreatorDashboard from "../pages/DashBoard/CreatorDashboard/CreatorDashboard";
+import AddContest from "../pages/DashBoard/CreatorDashboard/AddContest";
+import EditContest from "../pages/DashBoard/CreatorDashboard/EditContest";
+import MyCreatedContest from "../pages/DashBoard/CreatorDashboard/MyCreatedContest";
+import SubmittedTask from "../pages/DashBoard/CreatorDashboard/SubmittedTask";
 
 export const router = createBrowserRouter([
   {
@@ -67,6 +72,60 @@ export const router = createBrowserRouter([
         element : (
           <PrivateRoute>
             <MyWinningContest></MyWinningContest>
+          </PrivateRoute>
+        )
+      },
+
+      {
+        path : '/creator-dashboard',
+        element : (
+          <PrivateRoute>
+            <CreatorDashboard></CreatorDashboard>
+          </PrivateRoute>
+        )
+      },
+
+      {
+        path : '/add-contest',
+        element : (
+          <PrivateRoute>
+           <AddContest></AddContest>
+          </PrivateRoute>
+        )
+      },
+
+      {
+        path : '/edit-contest',
+        element : (
+          <PrivateRoute>
+           <EditContest></EditContest>
+          </PrivateRoute>
+        )
+      },
+
+      {
+        path : '/edit-contest/:id',
+        element : (
+          <PrivateRoute>
+           <EditContest></EditContest>
+          </PrivateRoute>
+        )
+      },
+
+      {
+        path : '/my-contests',
+        element : (
+          <PrivateRoute>
+           <MyCreatedContest></MyCreatedContest>
+          </PrivateRoute>
+        )
+      },
+
+      {
+        path : '/submit-task',
+        element : (
+          <PrivateRoute>
+           <SubmittedTask></SubmittedTask>
           </PrivateRoute>
         )
       },

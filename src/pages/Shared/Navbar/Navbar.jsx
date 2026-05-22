@@ -2,12 +2,23 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../../../component/Logo/Logo";
 import useAuth from "../../../hooks/useAuth";
 import ThemeToggle from "../../../component/ThemeToggle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { user, logOut } = useAuth();
+
   const [open, setOpen] = useState(false);
+  const [role, setRole] = useState("");
+
+  // 🔥 fetch user role
+  useEffect(() => {
+    if (user?.email) {
+      fetch(`http://localhost:3000/users/${user.email}`)
+        .then(res => res.json())
+        .then(data => setRole(data?.role));
+    }
+  }, [user?.email]);
 
   const handleLogOut = () => {
     logOut()
@@ -16,6 +27,18 @@ const Navbar = () => {
         navigate("/");
       })
       .catch((error) => console.log(error));
+  };
+
+  // 🎯 role based dashboard route
+  const handleDashboard = () => {
+    if (role === "admin") {
+      navigate("/admin-dashboard");
+    } else if (role === "creator") {
+      navigate("/creator-dashboard");
+    } else {
+      navigate("/user-dashboard");
+    }
+    setOpen(false);
   };
 
   return (
@@ -62,26 +85,29 @@ const Navbar = () => {
 
             {/* Dropdown */}
             {open && (
-              <div className="absolute right-0 mt-3 w-52 bg-base-100 shadow-xl rounded-xl z-50">
+              <div className="absolute right-0 mt-3 w-52 bg-base-100 shadow-xl rounded-xl z-50 overflow-hidden">
 
-                {/* Name */}
+                {/* NAME */}
                 <div className="px-4 py-3 border-b">
                   <p className="font-semibold">
                     {user?.displayName || "User"}
                   </p>
+
+                  {/* optional role show */}
+                  <p className="text-xs text-gray-500">
+                    Role: {role || "user"}
+                  </p>
                 </div>
 
-                {/* Dashboard */}
+                {/* DASHBOARD */}
                 <button
-                  onClick={() => {
-                    navigate("/user-dashboard");
-                    setOpen(false);
-                  }}
+                  onClick={handleDashboard}
                   className="w-full text-left px-4 py-2 hover:bg-base-200"
                 >
                   Dashboard
                 </button>
-                {/* Logout */}
+
+                {/* LOGOUT */}
                 <button
                   onClick={handleLogOut}
                   className="w-full text-left px-4 py-2 hover:bg-red-100 text-red-500"

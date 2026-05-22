@@ -58,7 +58,7 @@ const MyWinningContest = () => {
   }
 
   return (
-    <div className="relative min-h-screen bg-base-200 p-6 mt-10">
+    <div className="relative min-h-screen bg-base-200 p-6 mt-10 rounded-2xl">
 
         <button
                 onClick={() => navigate("/user-dashboard")}

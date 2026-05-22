@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const SubmittedTask = () => {
     const { user } = useAuth();
     console.log(user);
+    const navigate = useNavigate();
 
     const [submissions, setSubmissions] = useState([]);
     const [selected, setSelected] = useState(null);
@@ -51,7 +53,14 @@ const SubmittedTask = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto p-6">
+        <div className="relative max-w-6xl mx-auto p-6">
+
+            <button
+                onClick={() => navigate("/creator-dashboard")}
+                className="absolute top-4 right-4 btn btn-circle btn-sm bg-base-200 hover:bg-red-500 hover:text-white border-0"
+            >
+                ✖
+            </button>
 
             <h2 className="text-3xl font-bold mb-6 text-center">
                 📥 Submitted Tasks

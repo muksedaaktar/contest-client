@@ -24,12 +24,15 @@ const AddContest = () => {
             name: data.name,
             image: data.image,
             short_description: data.description,
-            price: parseFloat(data.price),
+            entryFee: parseFloat(data.price),
             prizeMoney: parseFloat(data.prizeMoney),
             task: data.taskInstruction,
             type: data.type,
             deadline: deadline,
             creator_email: user?.email,
+            participants: 0,
+            winnerDeclared: false,
+            status: "pending",
             createdAt: new Date(),
         };
 
@@ -179,7 +182,7 @@ const AddContest = () => {
 
                 {/* Submit */}
                 <button
-                onClick={() => navigate("/creator-dashboard")} className="btn btn-primary w-full">
+                    className="btn btn-primary w-full">
                     Create Contest
                 </button>
 

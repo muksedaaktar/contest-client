@@ -1,7 +1,7 @@
 # 🏆 ContestHub
 
 ## 🌐 Live Site
-https://your-live-site-url.com
+https://contest-competition.web.app
 
 ---
 
@@ -26,6 +26,13 @@ This project is built using **React, Node.js, Express, and MongoDB** with Fireba
 - 💳 Payment/entry fee system for contest registration
 - 📅 Deadline-based contest management
 - 🎯 Filter contests by type and status
+- ## 🧭 Extra Routes
+
+- 🗂️ Contest Categories Page (`/contest-categories`)  
+  Users can browse contests by different categories like Gaming, Coding, Design, Writing etc.
+
+- 📊 Analytics Page (`/analytics`)  
+  Displays contest performance, user activity, and platform insights using charts and visual data.
 
 ---
 
@@ -46,6 +53,7 @@ This project is built using **React, Node.js, Express, and MongoDB** with Fireba
 - Home Page
 - All Contests Page
 - Contest Details Page
+- Contest Categories Page
 - User Dashboard
 - Creator Dashboard
 - Admin Dashboard

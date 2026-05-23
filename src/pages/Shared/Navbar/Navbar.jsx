@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className="navbar-start container mx-auto px-5">
         <div className="flex items-center gap-2">
           <Logo />
-          <h1 className="text-2xl font-extrabold">
+          <h1 className="text-2xl font-extrabold dancing-script">
             <span className="text-primary">Con</span>
             <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">
               TestHub

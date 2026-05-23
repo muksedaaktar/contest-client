@@ -20,7 +20,7 @@ const Footer = () => {
                     <div className="flex items-center gap-3 mb-5">
                   <Logo></Logo>
 
-                        <h2 className="text-3xl font-extrabold">
+                        <h2 className="text-3xl font-extrabold dancing-script">
                             <span className="text-primary">Con</span>
                             <span className="bg-linear-to-r from-[#54CF68] to-[#00827A] bg-clip-text text-transparent">
                                 TestHub

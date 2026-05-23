@@ -14,7 +14,7 @@ const Navbar = () => {
   // 🔥 fetch user role
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/users/${user.email}`)
+      fetch(`https://contest-server-lyart.vercel.app/users/${user.email}`)
         .then(res => res.json())
         .then(data => setRole(data?.role));
     }

@@ -22,7 +22,7 @@ const EditContest = () => {
     // Load existing contest data
     // ----------------------------
     useEffect(() => {
-        fetch(`http://localhost:3000/contests/${id}`)
+        fetch(`https://contest-server-lyart.vercel.app/contests/${id}`)
             .then(res => res.json())
             .then(data => {
                 setValue("name", data.name);
@@ -61,7 +61,7 @@ const EditContest = () => {
         };
 
         try {
-            const res = await fetch(`http://localhost:3000/contests/${id}`, {
+            const res = await fetch(`https://contest-server-lyart.vercel.app/contests/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

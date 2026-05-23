@@ -15,7 +15,7 @@ const SubmittedTask = () => {
     // Load all submissions
     
     useEffect(() => {
-        fetch("http://localhost:3000/submissions")
+        fetch("https://contest-server-lyart.vercel.app/submissions")
             .then(res => res.json())
             .then(data => setSubmissions(data));
     }, []);
@@ -30,7 +30,7 @@ const SubmittedTask = () => {
                 prize: "Declared by creator",
             };
 
-            const res = await fetch("http://localhost:3000/winners", {
+            const res = await fetch("https://contest-server-lyart.vercel.app/winners", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 
 const fetchContests = async () => {
-  const res = await fetch("http://localhost:3000/popular-contests");
+  const res = await fetch("https://contest-server-lyart.vercel.app/popular-contests");
   if (!res.ok) throw new Error("Failed to fetch Contests");
   return res.json();
 };

@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import { useMemo, useState } from "react";
 
 const fetchContests = async () => {
-  const res = await fetch("http://localhost:3000/contests");
+  const res = await fetch("https://contest-server-lyart.vercel.app/contests");
   if (!res.ok) throw new Error("Failed to fetch contests");
   return res.json();
 };

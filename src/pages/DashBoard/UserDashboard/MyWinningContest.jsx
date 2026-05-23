@@ -16,7 +16,7 @@ const MyWinningContest = () => {
       try {
         setLoading(true);
 
-        const res = await fetch("http://localhost:3000/winners");
+        const res = await fetch("https://contest-server-lyart.vercel.app/winners");
         const data = await res.json();
 
         const myWins = data.filter(
@@ -26,7 +26,7 @@ const MyWinningContest = () => {
         const result = await Promise.all(
           myWins.map(async (w) => {
             const cRes = await fetch(
-              `http://localhost:3000/contests/${w.contestId}`
+              `https://contest-server-lyart.vercel.app/contests/${w.contestId}`
             );
             const contest = await cRes.json();
 

@@ -18,14 +18,14 @@ const ContestDetails = () => {
 
   // ---------------- FETCH CONTEST ----------------
   useEffect(() => {
-    fetch(`http://localhost:3000/contests/${id}`)
+    fetch(`https://contest-server-lyart.vercel.app/contests/${id}`)
       .then(res => res.json())
       .then(data => setContest(data));
   }, [id]);
 
   // ---------------- FETCH WINNER ----------------
   useEffect(() => {
-    fetch(`http://localhost:3000/winners/${id}`)
+    fetch(`https://contest-server-lyart.vercel.app/winners/${id}`)
       .then(res => res.json())
       .then(data => setWinner(data))
       .catch(() => setWinner(null));
@@ -35,7 +35,7 @@ const ContestDetails = () => {
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`http://localhost:3000/registrations?email=${user.email}&contestId=${id}`)
+    fetch(`https://contest-server-lyart.vercel.app/registrations?email=${user.email}&contestId=${id}`)
       .then(res => res.json())
       .then(data => {
         if (data.length > 0) setIsRegistered(true);
@@ -79,7 +79,7 @@ const ContestDetails = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/submissions", {
+      const res = await fetch("https://contest-server-lyart.vercel.app/submissions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

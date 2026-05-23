@@ -7,7 +7,7 @@ const ManageContests = () => {
 
     // fetch contests
     useEffect(() => {
-        fetch("http://localhost:3000/contests")
+        fetch("https://contest-server-lyart.vercel.app/contests")
             .then(res => res.json())
             .then(data => {
                 setContests(data);
@@ -18,7 +18,7 @@ const ManageContests = () => {
     // CONFIRM contest
     const handleConfirm = async (id) => {
         try {
-            const res = await fetch(`http://localhost:3000/contests/${id}`, {
+            const res = await fetch(`https://contest-server-lyart.vercel.app/contests/${id}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ status: "confirmed" }),
@@ -41,7 +41,7 @@ const ManageContests = () => {
     // REJECT contest
     const handleReject = async (id) => {
         try {
-            const res = await fetch(`http://localhost:3000/contests/${id}`, {
+            const res = await fetch(`https://contest-server-lyart.vercel.app/contests/${id}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ status: "rejected" }),
@@ -71,7 +71,7 @@ const ManageContests = () => {
             confirmButtonText: "Yes, delete it!",
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const res = await fetch(`http://localhost:3000/contests/${id}`, {
+                const res = await fetch(`https://contest-server-lyart.vercel.app/contests/${id}`, {
                     method: "DELETE",
                 });
 

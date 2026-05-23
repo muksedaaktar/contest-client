@@ -13,7 +13,7 @@ const Payment = () => {
 
   // ---------------- FETCH CONTEST ----------------
   useEffect(() => {
-    fetch(`http://localhost:3000/contests/${id}`)
+    fetch(`https://contest-server-lyart.vercel.app/contests/${id}`)
       .then(res => res.json())
       .then(data => setContest(data));
   }, [id]);
@@ -31,12 +31,12 @@ const Payment = () => {
       await new Promise(res => setTimeout(res, 1500));
 
       // 1️⃣ increase participant count
-      await fetch(`http://localhost:3000/contests/increase/${id}`, {
+      await fetch(`https://contest-server-lyart.vercel.app/contests/increase/${id}`, {
         method: "PATCH",
       });
 
       // 2️⃣ SAVE REGISTRATION (IMPORTANT FIX)
-      await fetch("http://localhost:3000/registrations", {
+      await fetch("https://contest-server-lyart.vercel.app/registrations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

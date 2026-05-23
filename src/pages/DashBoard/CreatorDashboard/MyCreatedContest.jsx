@@ -15,7 +15,7 @@ const MyCreatedContests = () => {
     useEffect(() => {
         if (!user?.email) return;
 
-        fetch(`http://localhost:3000/contests?email=${user.email}`)
+        fetch(`https://contest-server-lyart.vercel.app/contests?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setContests(data);
@@ -37,7 +37,7 @@ const MyCreatedContests = () => {
 
         if (!confirm.isConfirmed) return;
 
-        const res = await fetch(`http://localhost:3000/contests/${id}`, {
+        const res = await fetch(`https://contest-server-lyart.vercel.app/contests/${id}`, {
             method: "DELETE",
         });
 

@@ -5,7 +5,7 @@ const Leaderboard = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:3000/users")
+        fetch("https://contest-server-lyart.vercel.app/users")
             .then(res => res.json())
             .then(data => {
                 // sort by wins (descending)

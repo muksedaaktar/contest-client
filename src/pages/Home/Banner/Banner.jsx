@@ -39,7 +39,7 @@ const Banner = () => {
       setLoading(true);
 
       const res = await fetch(
-        `http://localhost:3000/contests?type=${value}`
+        `https://contest-server-lyart.vercel.app/contests?type=${value}`
       );
 
       const data = await res.json();

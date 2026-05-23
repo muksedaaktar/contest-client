@@ -20,14 +20,14 @@ const Analytics = () => {
 
     useEffect(() => {
         // users stats (win/participation)
-        fetch("http://localhost:3000/users")
+        fetch("https://contest-server-lyart.vercel.app/users")
             .then(res => res.json())
             .then(data => {
                 setStats(data);
             });
 
         // contests data
-        fetch("http://localhost:3000/contests")
+        fetch("https://contest-server-lyart.vercel.app/contests")
             .then(res => res.json())
             .then(data => {
                 setContests(data);

@@ -25,7 +25,7 @@ const MyProfile = () => {
     const [participated, setParticipated] = useState(0);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/users/${user.email}`)
+        fetch(`https://contest-server-lyart.vercel.app/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setName(data.name);
@@ -42,13 +42,13 @@ const MyProfile = () => {
             try {
                 // participated
                 const regRes = await fetch(
-                    `http://localhost:3000/registrations?email=${user.email}`
+                    `https://contest-server-lyart.vercel.app/registrations?email=${user.email}`
                 );
                 const regData = await regRes.json();
 
                 // wins
                 const winRes = await fetch(
-                    `http://localhost:3000/winners`
+                    `https://contest-server-lyart.vercel.app/winners`
                 );
                 const winData = await winRes.json();
 
@@ -89,7 +89,7 @@ const MyProfile = () => {
 
             // MongoDB update
             const res = await fetch(
-                `http://localhost:3000/users/${user.email}`,
+                `https://contest-server-lyart.vercel.app/users/${user.email}`,
                 {
                     method: "PATCH",
                     headers: {

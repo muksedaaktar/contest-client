@@ -18,7 +18,7 @@ const Register = () => {
 
   // 👉 Save to MongoDB
   const saveUserToDB = async (userInfo) => {
-    await fetch("http://localhost:3000/users", {
+    await fetch("https://contest-server-lyart.vercel.app/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

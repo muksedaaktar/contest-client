@@ -37,7 +37,7 @@ const AddContest = () => {
         };
 
         try {
-            const res = await fetch("http://localhost:3000/contests", {
+            const res = await fetch("https://contest-server-lyart.vercel.app/contests", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -7,7 +7,7 @@ const ManageUsers = () => {
 
     // fetch all users
     useEffect(() => {
-        fetch("http://localhost:3000/users")
+        fetch("https://contest-server-lyart.vercel.app/users")
             .then(res => res.json())
             .then(data => {
                 setUsers(data);
@@ -18,7 +18,7 @@ const ManageUsers = () => {
     // role update
     const handleRoleChange = async (email, role) => {
         try {
-            const res = await fetch(`http://localhost:3000/users/role/${email}`, {
+            const res = await fetch(`https://contest-server-lyart.vercel.app/users/role/${email}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

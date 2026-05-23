@@ -19,7 +19,7 @@ const MyParticipatedContest = () => {
 
         // 1. get registrations
         const res = await fetch(
-          `http://localhost:3000/registrations?email=${user.email}`
+          `https://contest-server-lyart.vercel.app/registrations?email=${user.email}`
         );
         const regs = await res.json();
 
@@ -27,7 +27,7 @@ const MyParticipatedContest = () => {
         const contestDetails = await Promise.all(
           regs.map(async (r) => {
             const cRes = await fetch(
-              `http://localhost:3000/contests/${r.contestId}`
+              `https://contest-server-lyart.vercel.app/contests/${r.contestId}`
             );
             const contest = await cRes.json();
 

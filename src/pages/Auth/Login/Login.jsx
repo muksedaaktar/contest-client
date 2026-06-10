@@ -4,9 +4,12 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 
 const Login = () => {
+
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
@@ -18,24 +21,55 @@ const Login = () => {
 
     const { signInUser } = useAuth()
 
-    const handleLogin = (data) => {
-        console.log('login data', data);
-        signInUser(data.email, data.password)
+    // const handleLogin = (data) => {
+    //     console.log('login data', data);
+    //     signInUser(data.email, data.password)
 
-            .then(result => {
-                console.log(result.user)
+    //         .then(result => {
+    //             console.log(result.user)
 
-                Swal.fire({
-                    title: "Login Successful!",
-                    text: "Welcome back to ContestHub.🎉",
-                    icon: "success",
-                    confirmButtonColor: "#54CF68",
-                });
-                navigate("/");
-            })
-            .catch(error => {
-                console.log(error)
-            })
+    //             Swal.fire({
+    //                 title: "Login Successful!",
+    //                 text: "Welcome back to ContestHub.🎉",
+    //                 icon: "success",
+    //                 confirmButtonColor: "#54CF68",
+    //             });
+    //             navigate("/");
+    //         })
+    //         .catch(error => {
+    //             console.log(error)
+    //         })
+    // };
+
+    const handleLogin = async (data) => {
+        setLoading(true);
+
+        try {
+            
+            await new Promise((resolve) => setTimeout(resolve, 5000));
+
+            const result = await signInUser(data.email, data.password);
+            console.log(result);
+
+            Swal.fire({
+                title: "Login Successful!",
+                text: "Welcome back to ContestHub 🎉",
+                icon: "success",
+                confirmButtonColor: "#54CF68",
+            });
+
+            navigate("/");
+        } catch (error) {
+            console.log(error);
+
+            Swal.fire({
+                title: "Login Failed",
+                text: error.message,
+                icon: "error",
+            });
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -138,11 +172,26 @@ const Login = () => {
                         </div>
 
                         {/* Login Button */}
-                        <button
+                        {/* <button
                             type="submit"
                             className="btn btn-primary w-full rounded-xl text-white text-lg"
                         >
                             Login
+                        </button> */}
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className={`btn btn-primary w-full rounded-xl text-white text-lg transition-all duration-300 ${loading ? "opacity-60 cursor-not-allowed" : ""
+                                }`}
+                        >
+                            {loading ? (
+                                <>
+                                    <span className="loading loading-spinner loading-sm mr-2"></span>
+                                    Logging...
+                                </>
+                            ) : (
+                                "Login"
+                            )}
                         </button>
 
 

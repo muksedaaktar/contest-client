@@ -135,6 +135,7 @@ const Navbar = () => {
                 >
                   Logout
                 </button>
+                
 
               </div>
             )}
@@ -148,6 +149,7 @@ const Navbar = () => {
             <button onClick={() => navigate("/register")} className="btn btn-outline btn-primary btn-sm">
               Register
             </button>
+            
           </div>
         )}
       </div>

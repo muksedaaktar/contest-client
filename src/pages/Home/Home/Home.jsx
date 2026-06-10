@@ -3,6 +3,7 @@
 import Banner from "../Banner/Banner";
 import CreatorCategories from "../Brands/CreatorCategories";
 import ContributionSection from "../Contribution/ContributionSection";
+import HowItWorks from "../HowItWorks/HowItWorks";
 import PopularContest from "../PopularContest/PopularContest";
 import WinnerAdvertisement from "../WinnerAdvertisement/WinnerAdvertisement";
 // import Brands from "../Brands/CreatorCategories";
@@ -15,6 +16,7 @@ const Home = () => {
            <PopularContest></PopularContest>
            <WinnerAdvertisement></WinnerAdvertisement>
            <ContributionSection></ContributionSection>
+           <HowItWorks></HowItWorks>
         </div>
     );
 };

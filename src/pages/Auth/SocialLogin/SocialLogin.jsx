@@ -12,15 +12,32 @@ const SocialLogin = () => {
 
     const handleGoogleSignIn = () => {
         signInGoogle()
-            .then(result => {
-                console.log(result.user)
+            .then(async (result) => {
+
+                const loggedUser = result.user;
+
+                const userInfo = {
+                    name: loggedUser.displayName,
+                    email: loggedUser.email,
+                    photo: loggedUser.photoURL,
+                    role: "user",
+                };
+
+                await fetch("https://contest-server-lyart.vercel.app/users", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                    body: JSON.stringify(userInfo),
+                });
 
                 Swal.fire({
                     title: "Google Login Successful!",
-                    text: "Welcome back to contesthub.🎉",
+                    text: "Welcome back to ContestHub 🎉",
                     icon: "success",
                     confirmButtonColor: "#54CF68",
                 });
+
                 navigate("/");
             })
 

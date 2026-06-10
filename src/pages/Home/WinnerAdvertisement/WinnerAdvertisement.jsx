@@ -5,6 +5,8 @@ import { Autoplay, EffectCards } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-cards";
+import { NavLink, useNavigate } from "react-router";
+import useAuth from "../../../hooks/useAuth";
 
 const fetchWinners = async () => {
   const res = await fetch("/data/winners.json");
@@ -12,7 +14,12 @@ const fetchWinners = async () => {
   return res.json();
 };
 
+
+
+
 const WinnerAdvertisement = () => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
   const { data: winners = [], isLoading } = useQuery({
     queryKey: ["winners"],
     queryFn: fetchWinners,
@@ -25,6 +32,15 @@ const WinnerAdvertisement = () => {
       </div>
     );
   }
+
+
+  const handleBecomeWinner = () => {
+    if (!user) {
+      navigate("/register");
+    } else {
+      navigate("/leader-board");
+    }
+  };
 
   return (
     <section className="py-10 bg-base-100">
@@ -78,9 +94,9 @@ const WinnerAdvertisement = () => {
             designer, or writer — this is your stage to shine.
           </p>
 
-          <button className="btn btn-primary mt-6 px-8 rounded-full">
-             Start Competing
-          </button>
+          <NavLink to="/all-contests" className="btn btn-primary mt-6 px-8 rounded-full">
+            Start Competing
+          </NavLink>
 
         </div>
 
@@ -133,8 +149,8 @@ const WinnerAdvertisement = () => {
 
       {/* CTA */}
       <div className="text-center mt-14">
-        <button className="btn btn-primary btn-lg px-12 rounded-full">
-          Join & Become a Winner 
+        <button onClick={handleBecomeWinner} className="btn btn-primary btn-lg px-12 rounded-full">
+          Join & Become a Winner
         </button>
       </div>
 

@@ -41,7 +41,7 @@ const Register = () => {
 
       // 3️⃣ MongoDB user save (FIXED FIELD)
       const userInfo = {
-        name: data.name,          // ✅ FIXED (was wrong before)
+        name: data.name,          
         email: data.email,
         photoURL: data.photoURL,
         role: "user",

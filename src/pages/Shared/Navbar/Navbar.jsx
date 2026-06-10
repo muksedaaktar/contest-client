@@ -1,9 +1,10 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Logo from "../../../component/Logo/Logo";
 import useAuth from "../../../hooks/useAuth";
 import ThemeToggle from "../../../component/ThemeToggle";
 import { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
+import ActiveNavLink from "../../../component/ActiveNav/ActiveNavLink";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -40,11 +41,18 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <li><NavLink to="/" onClick={() => setMobileMenu(false)}>Home</NavLink></li>
-      <li><NavLink to="/all-contests" onClick={() => setMobileMenu(false)}>All Contests</NavLink></li>
-      <li><NavLink to="/extra" onClick={() => setMobileMenu(false)}>Extra Section</NavLink></li>
-      <li><NavLink to="/leader-board" onClick={() => setMobileMenu(false)}>Leader Board</NavLink></li>
-      <li><NavLink to="/analytics" onClick={() => setMobileMenu(false)}>Analytics</NavLink></li>
+      <li><ActiveNavLink to="/" onClick={() => setMobileMenu(false)}>Home</ActiveNavLink></li>
+      <li><ActiveNavLink to="/all-contests" onClick={() => setMobileMenu(false)}>All Contests</ActiveNavLink></li>
+      <li><ActiveNavLink to="/extra" onClick={() => setMobileMenu(false)}>Extra Section</ActiveNavLink></li>
+      <li><ActiveNavLink to="/leader-board" onClick={() => setMobileMenu(false)}>Leader Board</ActiveNavLink></li>
+      <li><ActiveNavLink to="/analytics" onClick={() => setMobileMenu(false)}>Analytics</ActiveNavLink></li>
+      {role === "user" && (
+        <li>
+          <ActiveNavLink to="/explore" onClick={() => setMobileMenu(false)}>
+            Explore
+          </ActiveNavLink>
+        </li>
+      )}
     </>
   );
 

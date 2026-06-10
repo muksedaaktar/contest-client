@@ -5,10 +5,11 @@ const UserDashboard = () => {
   const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-base-200 p-5 mt-10">
+    <div className=" min-h-screen bg-base-200 p-5 mt-10">
+      
 
       {/* WELCOME SECTION */}
-      <div className="bg-base-100 rounded-3xl shadow-xl p-8 mb-6">
+      <div className="realtive bg-base-100 rounded-3xl shadow-xl p-8 mb-6">
 
         <h1 className="text-3xl font-bold">
           💐 Welcome, {user?.displayName || "User"}

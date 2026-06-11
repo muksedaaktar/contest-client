@@ -38,6 +38,7 @@ const SkeletonCard = () => {
 const AllContests = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
+  console.log(user);
 
   const [stage, setStage] = useState("spinner");
   // spinner | skeleton | ready
@@ -196,11 +197,7 @@ const AllContests = () => {
                 </p>
 
                 <button
-                  onClick={() =>
-                    user
-                      ? navigate(`/contest/${contest._id}`)
-                      : navigate("/login")
-                  }
+                  onClick={() => navigate(`/contest/${contest._id}`)}
                   className="btn btn-primary w-full rounded-full"
                 >
                   View Details

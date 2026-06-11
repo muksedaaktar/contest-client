@@ -132,7 +132,7 @@ const Banner = () => {
                     {results.map((contest) => (
                       <div
                         key={contest.id}
-                        onClick={() => navigate(`/contest/${contest.id}`)}
+                        onClick={() =>  navigate(`/contest/${contest._id || contest.id}`)}
                         className="p-3 hover:bg-gray-100 cursor-pointer border-b"
                       >
                         <p className="font-semibold">{contest.name}</p>

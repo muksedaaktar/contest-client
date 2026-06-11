@@ -48,6 +48,8 @@ const PopularContest = () => {
     staleTime: 1000 * 60 * 5,
   });
 
+  
+
   /* ---------------- LOADING FLOW ---------------- */
   useEffect(() => {
     // setStage("spinner");
@@ -67,6 +69,7 @@ const PopularContest = () => {
   }, []);
 
   if (error)
+   
     return <p className="text-center py-10">Error loading contests</p>;
 
   const contestsArray = Array.isArray(data) ? data : [];

@@ -182,14 +182,6 @@ export const router = createBrowserRouter([
         )
       },
 
-      // {
-      //   path: "contest/:id",
-      //   element: (
-      //     <PrivateRoute>
-      //       <ContestDetails />
-      //     </PrivateRoute>
-      //   )
-      // },
       {
         path : "contest/:id",
         element : <ContestDetails/>

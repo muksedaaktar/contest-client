@@ -18,7 +18,7 @@ const Footer = () => {
                 {/* Logo & Description */}
                 <aside className="lg:col-span-2">
                     <div className="flex items-center gap-3 mb-5">
-                  <Logo></Logo>
+                        <Logo></Logo>
 
                         <h2 className="text-3xl font-extrabold dancing-script">
                             <span className="text-primary">Con</span>
@@ -35,10 +35,10 @@ const Footer = () => {
                     </p>
 
                     {/* CTA */}
-                    <NavLink to = "/all-contests" className="btn btn-primary mt-6 rounded-xl px-6">
-                         
+                    <NavLink to="/all-contests" className="btn btn-primary mt-6 rounded-xl px-6">
+
                         Explore Contests
-                    
+
                     </NavLink>
                 </aside>
 
@@ -97,7 +97,9 @@ const Footer = () => {
                     <div className="flex gap-4">
 
                         <a
-                            href="#"
+                            href="https://x.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-11 h-11 rounded-xl bg-base-100 hover:bg-primary hover:text-white flex items-center justify-center transition duration-300 shadow-sm"
                         >
                             <svg
@@ -111,7 +113,9 @@ const Footer = () => {
                         </a>
 
                         <a
-                            href="#"
+                            href="https://www.youtube.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-11 h-11 rounded-xl bg-base-100 hover:bg-primary hover:text-white flex items-center justify-center transition duration-300 shadow-sm"
                         >
                             <FaYoutube size={18} />

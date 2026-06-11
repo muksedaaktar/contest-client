@@ -51,6 +51,8 @@ const AllContests = () => {
     queryFn: fetchContests,
   });
 
+  
+
   /* ---------------- LOADING FLOW ---------------- */
   useEffect(() => {
     // setStage("spinner");

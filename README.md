@@ -3,6 +3,16 @@
 ## 🌐 Live Site
 https://contest-competition.web.app
 
+## Demo Credentials
+
+### Admin Account
+- **Email:** faria120@gmail.com
+- **Password:** Faria@120
+
+### User Account
+- **Email:** jaman120@gmail.com
+- **Password:** Jaman@120
+
 ---
 
 ## 📌 Project Overview
